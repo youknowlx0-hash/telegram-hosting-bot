@@ -133,19 +133,14 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
         return
 
     await update.message.reply_text(
-        f"🚀 *Welcome, {user.first_name}!*
-
-"
-        "Your Telegram hosting dashboard is ready.
-
-"
-        "📤 Upload projects
-📦 Manage projects
-📊 View account details",
-        parse_mode="Markdown",
-        reply_markup=home_keyboard(user.id)
-    )
-
+    f"🚀 *Welcome, {user.first_name}!*\n\n"
+    "Your Telegram hosting dashboard is ready.\n\n"
+    "📤 Upload projects\n"
+    "📦 Manage projects\n"
+    "📊 View account details",
+    parse_mode="Markdown",
+    reply_markup=home_keyboard(user.id)
+                          )
 
 async def callback(update: Update, context: ContextTypes.DEFAULT_TYPE):
     q = update.callback_query
